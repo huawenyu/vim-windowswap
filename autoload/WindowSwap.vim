@@ -4,6 +4,7 @@ let s:markedWinNum = []
 
 function! WindowSwap#MarkWindowSwap()
    call WindowSwap#SetMarkedWindowNum( tabpagenr(), winnr() )
+   echom "Marked src buffer"
 endfunction
 
 function! WindowSwap#DoWindowSwap()
@@ -11,6 +12,8 @@ function! WindowSwap#DoWindowSwap()
       echom "WindowSwap: No window marked to swap! Mark a window first."
       return
    endif
+
+   echom ""
    "Mark destination
    let curTab = tabpagenr()
    let curNum = winnr()
